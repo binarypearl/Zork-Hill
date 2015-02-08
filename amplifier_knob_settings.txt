@@ -1,0 +1,4 @@
+volume_knob:1
+bass_knob:1
+mid_knob:1
+treble_knob:1

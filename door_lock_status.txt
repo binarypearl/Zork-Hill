@@ -1,0 +1,4 @@
+north_door:L
+east_door:L
+south_door:U
+west_door:L
