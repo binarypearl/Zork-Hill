@@ -53,10 +53,12 @@ def begin_game():
   mixer.music.load ('./zork_hill_intro.ogg')
   mixer.music.play()
   
-  print "Welcome to Zork Hill.  This is a console based game like Zork, but with Silent Hill undertones."
-  print "Something brought you here...oh right!  There was a forum on-line, a strange one."
-  print "There were posts about this place called Zork Hill, where you could find anything that you are missing."
-  print "But what was I missing that made me want to come to this place?"
+  print "Welcome to Zork Hill.  This is a console based word game like Zork, but with Silent Hill undertones."
+  print 
+  print "Everyone has their vice.  The deep, dark secrets that we wouldn't dare tell anyone."
+  print "But we can't escape from them forever.  The book at the library said don't come to this place...yet here I am"
+  print
+  print "I'm angry at myself for not listening to the book, but I just couldn't help myself..."
   print 
   print "Press Enter to start... (or 'q' or 'Q' to quit)",
   
@@ -65,6 +67,20 @@ def begin_game():
   
   if user_response_lower_case == "q":
     we_died()
+    
+  elif user_response_lower_case == "angry":
+    mixer.music.stop()
+    
+    os.system ("clear")
+    print "You found the easter egg!  You get to listen to my cover of the Angry Video Game Nerd theme song for 40 seconds!"
+    
+    mixer.init()
+    mixer.music.load ('./avgn_theme_cover.ogg')
+    mixer.music.play()
+    
+    time.sleep (40)
+    
+    center_room()
     
   else:
     mixer.music.stop()
@@ -126,7 +142,8 @@ def center_room():
 
     else:
       user_repsonse_acceptable = False
-      print "Response not understood.  Please try again."
+      os.system ("clear")
+      print "Response not understood.  Please try again.\n"
       
   # Now we know the status of the door:  
   if returned_lock_status == "L":
@@ -137,7 +154,7 @@ def center_room():
     
     time.sleep(1)
     
-    print "I can't get the %s door open." % user_response
+    print "I can't get the door open.  It's locked."
     
     # Crude way to handle this.  Basically once we call center_room(), the message saying can't open the door
     # will go away due to it's clear statement.  I know I have had better solutions for this situation before....
@@ -197,7 +214,26 @@ def south_door_room():
     if user_response == "1":
       next_room = "center_room"
       user_repsonse_acceptable = True
-    
+      
+      mixer.init()
+      mixer.music.load ('./foot_step_water_high.mp3')
+      
+      mixer.music.play()
+      time.sleep(1)
+
+      mixer.music.play()
+      time.sleep(1)
+      
+      mixer.music.play()
+      time.sleep(1)      
+      
+      mixer.music.play()
+      time.sleep(1)
+      
+      mixer.music.load ('./door_open_2.mp3')
+      mixer.music.play()
+      time.sleep(1)
+      
     elif user_response == "2":
       os.system ("clear")
       
@@ -563,7 +599,8 @@ def end_game():
   Let's have this routine end the game
   """
   
-  print "do something more elaborate here."
+  print "\nThanks for the playing the shareware version!  Not that this is really shareware..."
+  print "Did you find the easter egg?  If not play again!  I will be angry if you don't!"
   
   exit (0)
   
@@ -644,7 +681,9 @@ def we_died():
   
   time.sleep(2)
   
-  print "You have died.  Try again."
+  os.system ("clear")
+  
+  print "You have died.  Thanks to play Zork Hill."
   exit(0)
 """------------------------------------------------------------------------------------------"""    
     
