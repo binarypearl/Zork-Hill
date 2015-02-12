@@ -7,8 +7,10 @@ Grab zork_hill.tar.bz2 and extract to a directory of your choice:
 tar -xvjf zork_hill.tar.bz2
 
 This will create a directory called './dist'.
+```
 cd ./distb
 ./zork_hill
+```
 
 NOTE:  zork_hill MUST currently be ran from the directory it resides in.  A fix for this may come at a later date.
 
