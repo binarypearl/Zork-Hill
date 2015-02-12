@@ -8,7 +8,7 @@ import os			# To use the system call to clear the screen
 from pygame import mixer	# To play music
 import time			# To create an artificial delay to add erieness
 import shutil			# Looks like it has a copy file function or two...
-
+import signal			# To trap ctrl-c
 
 """
 This is the code for Zork Hill.  It's a pardoy of Zork and Silent Hill series of games.
@@ -203,7 +203,7 @@ def south_door_room():
   print "in the room.  It doesn't see you yet.  Behind the monster there are two things."
   print "There is a medkit on a table.  There is also a box with a keypad."
   print "You have 3 options:\n"
-  print "1. Run away back to the center room."
+  print "1. Go back to the center room."
   print "2. Try to sneak around the monster."
   print "3. Attack the monster directly."
   print "q. Quit the game."
@@ -686,7 +686,20 @@ def we_died():
   print "You have died.  Thanks to play Zork Hill."
   exit(0)
 """------------------------------------------------------------------------------------------"""    
-    
+
+"""------------------------------------------------------------------------------------------"""     
+# Trapping ctrl-c
+def signal_handler (signal, frame):
+  """
+  Capture ctrl-c to exit gracefully so we don't get an ugly stack trace.
+  """
+
+  # Just call the we_died() function.  If the user presses ctrl-c they want out of the game anyway.
+  we_died()
+"""------------------------------------------------------------------------------------------""" 
+
+# Main logic here:
+signal.signal(signal.SIGINT, signal_handler)
 
 # Let's begin:
 begin_game()
