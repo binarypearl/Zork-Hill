@@ -4,7 +4,9 @@ To run:  As of now this is Linux only.  Windows or Mac versions may come at a la
 	 No need for root, this app can run as a normal user.
 
 Grab zork_hill.tar.bz2 and extract to a directory of your choice:
+```
 tar -xvjf zork_hill.tar.bz2
+```
 
 This will create a directory called './dist'.
 ```
