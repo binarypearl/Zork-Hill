@@ -10,7 +10,7 @@ tar -xvjf zork_hill.tar.bz2
 
 This will create a directory called './dist'.
 ```
-cd ./distb
+cd ./dist
 ./zork_hill
 ```
 
