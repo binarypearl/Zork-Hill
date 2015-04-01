@@ -21,7 +21,8 @@ Music and Sound Effects:
 All sound effects were created by Akira Yamaoka / Konami. 
 Sound effects obtained from:  http://silenthillmedia.net/sh2-sound.htm
 
-The intro theme and the "easter egg" song were written by Shaun Miller
+The intro theme song was written by Shaun Miller.  The easter egg song is a cover...but I won't divulge that secret here.
+But if you know the song, then you know / can easily find the original composer.
 
 
 Zork Hill was writin in python by Shaun Miller.
